@@ -2,6 +2,7 @@
 api_key.py
 Release.key
 nohup.out
+assertion.log
 
 # SPOKE data files
 spoke_2023_human.json
