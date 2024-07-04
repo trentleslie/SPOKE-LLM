@@ -2,7 +2,7 @@ import gradio as gr
 import requests
 import traceback
 import logging
-from api_key import auth, url
+from api_key import gemini_auth, gemini_url
 
 # Configure logging
 logging.basicConfig(filename='error.log', level=logging.ERROR)
@@ -14,10 +14,10 @@ def ask(text):
             "messages": [{"role": "user", "content": text}]
         }
         headers = {
-            "Authorization": auth,
+            "Authorization": gemini_auth,
             "Content-Type": "application/json"
         }
-        url = url
+        url = gemini_url
         response = requests.post(url, headers=headers, json=prompt)
         
         # Log status code and raw response content
