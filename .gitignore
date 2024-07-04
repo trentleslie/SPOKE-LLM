@@ -1,5 +1,10 @@
-# API Key
+# API Key etc
 api_key.py
+Release.key
+nohup.out
+
+# SPOKE data files
+spoke_2023_human.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
