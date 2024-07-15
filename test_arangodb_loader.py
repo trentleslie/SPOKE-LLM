@@ -51,6 +51,10 @@ class TestArangoDBLoader(unittest.TestCase):
         self.assertEqual(edges_added, 1)
         mock_db['Nodes'].createDocument.assert_called_once()
         mock_db['Edges'].createDocument.assert_called_once()
+        
+        # Check that createDocument was called twice in total
+        total_create_document_calls = mock_db['Nodes'].createDocument.call_count + mock_db['Edges'].createDocument.call_count
+        self.assertEqual(total_create_document_calls, 2)
 
     @patch('arangodb_loader.connect_to_arangodb')
     @patch('arangodb_loader.create_or_get_database')
